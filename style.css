@@ -1,0 +1,788 @@
+/* Reset básico */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: #2c3e50;
+}
+
+.logo {
+    font-size: 0.9rem;       /* Fonte bem menor e discreta */
+    font-weight: 400;        /* 400 é "Normal", tiramos o negrito */
+    color: #2c3e50;          /* Mantém o azul escuro elegante */
+    letter-spacing: 2px;     /* Espaça as letras para dar "ar" e sofisticação */
+    text-transform: uppercase; /* Deixa tudo maiúsculo para ficar alinhado */
+    line-height: 1.5;        /* Espaço entre as linhas do nome */
+    text-align: left;        /* Garante alinhamento à esquerda */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Efeito suave ao passar o mouse */
+}
+
+nav a:hover {
+    color: #555;
+}
+
+/* Banner Principal */
+.banner {
+    /* Certifique-se que a imagem empresaDaniel.jpg está na mesma pasta */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('empresaDaniel.jpg');
+    
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h1 {
+    /* Essa família de fontes traz o visual clássico do Direito (Serifa) */
+    font-family: 'Times New Roman', Times, serif;
+    
+    color: white;
+    font-size: 4.2rem;       /* Tamanho grande e imponente */
+    font-weight: normal;     /* Fontes clássicas não precisam de muito negrito para impor respeito */
+    max-width: 900px;
+    line-height: 1.2;
+    
+    /* Deixa tudo maiúsculo e espaçado, criando um visual de "placa de bronze" */
+    text-transform: uppercase; 
+    letter-spacing: 6px;     /* O segredo da elegância: letras bem separadas */
+    
+   
+    
+    
+}
+.servicos {
+    padding: 60px 50px;
+    background-color: #f4f4f4; /* Fundo levemente cinza para destacar os cards brancos */
+}
+
+.titulo-servicos {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    
+}
+
+
+/* --- Grade de Serviços (Grid 4x2) --- */
+
+.grade-servicos {
+    display: grid; /* Mudamos de flex para grid */
+    grid-template-columns: repeat(4, 1fr); /* Cria exatamente 4 colunas de tamanho igual */
+    gap: 20px; /* Espaço entre os cards */
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    
+    /* Removemos o 'flex: 0 0 27%' antigo */
+    width: 100%; 
+    height: 100%; /* Garante que todos tenham a mesma altura */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Reduzi um pouco a altura da imagem para caber melhor na tela */
+    object-fit: cover;
+}
+
+/* Responsividade: Ajustes para telas menores */
+
+/* Tablets (Telas médias): 2 colunas por linha */
+@media (max-width: 1024px) {
+    .grade-servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares (Telas pequenas): 1 coluna por linha */
+@media (max-width: 600px) {
+    .grade-servicos {
+        grid-template-columns: 1fr;
+    }
+}
+/* Texto dentro do Cartão */
+.card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    /* Alteração para alinhar botões: Ocupa todo o espaço restante */
+    flex: 1;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Botão Agendar (Agora inclui links 'a' também) */
+.card-info button,
+.card-info a {
+    background-color: #1a2b42; /* Azul escuro da referência */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px; /* Borda bem arredondada estilo pílula */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão ocupa a largura toda */
+    
+    /* Alterações para alinhar e estilizar links */
+    text-align: center;
+    text-decoration: none;
+    margin-top: auto; /* Empurra o botão para o fundo do card */
+}
+
+.card-info button:hover,
+.card-info a:hover {
+    background-color: #2c3e50; /* Azul um pouco mais claro no mouse over */
+}
+
+/* --- Estilos da Seção Sobre --- */
+
+.sobre {
+    display: flex; /* Coloca imagem e texto lado a lado */
+    width: 100%;
+    background-color: #e8e8e6; /* Cor de fundo cinza claro igual da referência */
+    align-items: flex-start; /* Faz as duas metades terem a mesma altura */
+}
+
+/* Configuração da metade da Imagem */
+.sobre-imagem {
+    flex: 1; /* Ocupa 50% do espaço */
+    width: 50%;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto cubra o espaço sem distorcer */
+    display: block; /* Remove espaços brancos indesejados abaixo da imagem */
+    min-height: 600px; /* Garante uma altura mínima para ficar imponente */
+}
+
+/* Configuração da metade do Texto */
+.sobre-conteudo {
+    flex: 1; /* Ocupa os outros 50% do espaço */
+    width: 50%;
+    padding: 60px 80px; /* Espaçamento interno generoso para o texto respirar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+}
+
+.sobre-conteudo h2 {
+    font-size: 3rem; /* Tamanho grande do título */
+    color: #000;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.sobre-conteudo p {
+    font-size: 1rem;
+    color: #444; /* Cinza escuro para leitura confortável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 40px;
+    text-align: justify; /* Texto justificado para ficar alinhado */
+}
+
+/* Botão Saiba Mais */
+.sobre-conteudo button {
+    background-color: #1a2b42; /* O mesmo azul escuro elegante */
+    color: white;
+    border: none;
+    padding: 15px 50px; /* Botão mais largo */
+    border-radius: 30px; /* Borda bem redonda (pílula) */
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    transition: background-color 0.3s;
+}
+
+.sobre-conteudo button:hover {
+    background-color: #2c3e50;
+}
+
+/* Ajuste para Celulares (Telas menores que 768px) */
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column; /* Coloca um embaixo do outro no celular */
+    }
+    .sobre-imagem, .sobre-conteudo {
+        width: 100%; /* Ocupam 100% da largura */
+    }
+    .sobre-conteudo {
+        padding: 40px 20px; /* Menos espaçamento no celular */
+    }
+    .sobre-imagem img {
+        min-height: 300px; /* Altura menor para a imagem no celular */
+    }
+}
+
+/* --- Estilos da Seção Valores --- */
+
+.valores {
+    display: flex;
+    flex-direction: row-reverse; /* Inverte a ordem: Texto Esquerda, Foto Direita */
+    width: 100%;
+    margin-top: 100px;
+    background-color: #e1d9f7; /* Fundo branco para quebrar o cinza das outras seções */
+    align-items: stretch;
+}
+
+/* Configuração da metade da Imagem (Direita) */
+.valores-imagem {
+    flex: 1; 
+    width: 50%;
+}
+
+.valores-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 600px;
+}
+
+/* Configuração da metade do Texto (Esquerda) */
+.valores-conteudo {
+    flex: 1;
+    width: 50%;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valores-conteudo h2 {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 40px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+/* Grade para os 6 itens de valores */
+.grade-valores {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 30px; /* Espaço entre os itens */
+}
+
+.item-valor h3 {
+    color: #1a2b42; /* Azul escuro da marca */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-left: 4px solid #1a2b42; /* Detalhe visual elegante ao lado do título */
+    padding-left: 10px;
+}
+
+.item-valor p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Responsividade para Celulares (Valores) */
+@media (max-width: 768px) {
+    .valores {
+        flex-direction: column-reverse; /* Imagem em cima, texto embaixo no celular */
+    }
+    .valores-imagem, .valores-conteudo {
+        width: 100%;
+    }
+    .valores-conteudo {
+        padding: 40px 20px;
+    }
+    .grade-valores {
+        grid-template-columns: 1fr; /* Uma coluna só no celular */
+        gap: 20px;
+    }
+    .valores-imagem img {
+        min-height: 250px;
+    }
+}
+
+/* --- Estilos da Seção Redes Sociais --- */
+
+.social {
+    padding: 60px 50px;
+    background-color: #e8e8e6; /* Mesmo fundo cinza claro das outras seções */
+    text-align: center; /* Centraliza o título e o botão */
+}
+
+.social h2 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* A Grade de 4 colunas */
+.social-grid {
+    display: grid;
+    /* Cria 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espaço entre os blocos */
+    margin-bottom: 40px;
+}
+
+/* O "Cartão" que segura o logo */
+.social-card {
+    background-color: white; /* Fundo branco para destacar os logos */
+    height: 250px; /* Altura fixa igual à referência visual */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.social-card:hover {
+    transform: translateY(-5px); /* Efeito suave ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Configuração dos Logos */
+.social-card img {
+    width: 200px; /* Tamanho controlado para o logo não ficar gigante */
+    height: auto; /* Corrigido de "px" para "auto" ou valor fixo se necessário */
+    object-fit: contain; /* Garante que o logo apareça inteiro */
+}
+
+/* Botão Redes Sociais */
+.social button {
+    background-color: #1a2b42;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social button:hover {
+    background-color: #2c3e50;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr); /* No celular, mostra 2 por linha */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr; /* Em telas muito pequenas, 1 por linha */
+    }
+}
+
+/* --- Estilos da Seção Fale Conosco --- */
+.contato {
+    padding: 80px 50px;
+    background-color: #e8e8e6; /* Fundo cinza claro padrão do site */
+    color: #000;
+}
+
+.contato-container {
+    display: flex; /* Coloca texto e formulário lado a lado */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+    gap: 80px; /* Espaço grande entre o texto e o formulário */
+}
+
+/* Lado Esquerdo */
+.contato-texto {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contato-texto h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.contato-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Lado Direito (Formulário) */
+.contato-form {
+    flex: 2; /* Formulário ocupa mais espaço que o texto */
+}
+
+/* Linha do Nome e Sobrenome */
+.nome-sobrenome {
+    display: flex;
+    gap: 20px; /* Espaço entre os dois campos */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilo das caixas de texto (Inputs) */
+.contato-form input, 
+.contato-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent; /* Fundo transparente igual da imagem */
+    border: 1px solid #333; /* Borda preta fina */
+    border-radius: 50px; /* Bordas bem redondas (pílula) */
+    font-size: 1rem;
+    outline: none; /* Tira o brilho padrão ao clicar */
+}
+
+/* Ajuste específico para a caixa de mensagem */
+.contato-form textarea {
+    border-radius: 20px; /* Borda menos redonda para o quadrado de texto */
+    resize: none; /* Impede que estiquem a caixa */
+}
+
+/* Botão Enviar */
+.contato-form button {
+    background-color: #1a2b42;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.contato-form button:hover {
+    background-color: #2c3e50;
+}
+
+/* --- Estilos do Rodapé (Footer) --- */
+footer {
+    background-color: #c2bae7;
+    padding: 60px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinha o conteúdo por baixo */
+    margin-top: 50px;
+}
+
+.footer-esquerdo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-esquerdo p {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-direito {
+    display: flex;
+    gap: 80px; /* Espaço entre Localização e Contato */
+}
+
+.footer-coluna h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-coluna p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsividade (Para Celular) */
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 40px;
+    }
+    
+    .nome-sobrenome {
+        flex-direction: column; /* Nome e Sobrenome empilhados no celular */
+        gap: 0;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .footer-direito {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+/* --- Estilos para o Texto Expansível (Saiba Mais) --- */
+
+.conteudo-oculto {
+    display: none; /* Começa escondido */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Quando o Javascript adicionar a classe 'mostrar', ele aparece */
+.conteudo-oculto.mostrar {
+    display: block;
+    animation: aparecerSuave 0.5s ease-in;
+}
+
+@keyframes aparecerSuave {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pequeno ajuste nos parágrafos do texto novo */
+.conteudo-oculto p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Efeito de Expansão da Seção Quem Somos --- */
+
+/* 1. Preparando os elementos para animar */
+/* Adicionamos uma transição suave de 0.6 segundos para as propriedades que vão mudar */
+.sobre-imagem, .sobre-conteudo {
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); /* Curva de animação elegante */
+    overflow: hidden; /* Importante para o conteúdo não "vazar" enquanto encolhe */
+}
+
+/* Garante que, no estado normal, eles dividam o espaço */
+.sobre-imagem {
+    flex: 1 0 50%; /* Flex-grow, Flex-shrink, Flex-basis */
+    opacity: 1;
+    max-width: 50%;
+}
+.sobre-conteudo {
+    flex: 1 0 50%;
+    max-width: 50%;
+}
+
+
+/* 2. O Estado Expandido (Quando clicou no botão) */
+
+/* Quando a seção principal tem a classe 'modo-expandido', a imagem faz isso: */
+.sobre.modo-expandido .sobre-imagem {
+    flex: 0 0 0%; /* Força a largura a zerar */
+    max-width: 0%; /* Garante que não ocupe espaço */
+    opacity: 0; /* Fica transparente suavemente */
+    padding: 0; /* Remove espaçamentos internos */
+}
+
+/* E o conteúdo de texto faz isso: */
+.sobre.modo-expandido .sobre-conteudo {
+    flex: 1 0 100%; /* Passa a ocupar 100% do espaço */
+    max-width: 100%;
+    /* Aumentamos o padding lateral para o texto não ficar muito grudado na borda da tela quando estiver em tela cheia, melhorando a leitura */
+    padding: 60px 15% !important; 
+}
+
+/* Ajuste para Responsivo no modo expandido (Celulares) */
+@media (max-width: 768px) {
+    .sobre.modo-expandido .sobre-conteudo {
+        padding: 40px 20px !important; /* Padding menor em telas pequenas */
+    }
+}
+/* --- Estilos da Nova Página de Serviços (servicos.html) --- */
+
+/* Banner Menor para páginas internas */
+.banner-interna {
+    background-color: #1a2b42;
+    color: white;
+    text-align: center;
+    padding: 80px 20px; /* Aumentei um pouco o padding */
+}
+
+.banner-interna h1 {
+    font-size: 3rem; /* Título maior */
+    margin-bottom: 15px;
+}
+
+/* Container Principal da Lista */
+.lista-servicos {
+    max-width: 1400px; /* AUMENTEI AQUI: De 1000px para 1400px para ficar bem largo */
+    width: 95%; /* Garante que ocupe quase toda a tela em monitores menores */
+    margin: 0 auto;
+    padding: 80px 0; /* Espaçamento vertical maior */
+}
+
+/* O Cartão de Serviço (Estilo igual à imagem de referência) */
+.item-servico {
+    display: flex;
+    align-items: stretch; /* Faz a imagem e o texto terem a mesma altura */
+    gap: 50px; /* Espaço entre a foto e o texto */
+    margin-bottom: 80px; /* Espaço entre um cartão e outro */
+    
+    /* O visual do "Cartão" */
+    background-color: #c2bae7; /* Cor lilás baseada no seu rodapé e na referência */
+    border-radius: 40px; /* Bordas bem arredondadas */
+    padding: 50px; /* Espaço interno generoso */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra para dar destaque */
+    
+    /* Removemos a borda de baixo antiga */
+    border-bottom: none;
+}
+
+/* Área da Imagem */
+.img-servico {
+    flex: 0 0 40%; /* A imagem ocupa 40% da largura do cartão */
+    display: flex; 
+}
+
+.img-servico img {
+    width: 100%;
+    height: 100%; /* Ocupa toda a altura disponível */
+    min-height: 400px; /* Garante que a imagem seja alta e imponente */
+    object-fit: cover; /* Corta a imagem para caber sem distorcer */
+    border-radius: 20px; /* Arredonda a imagem também */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Área do Texto */
+.txt-servico {
+    flex: 1; /* Ocupa o restante do espaço (60%) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+}
+
+.txt-servico h2 {
+    color: #1a2b42; /* Azul escuro */
+    font-size: 2.5rem; /* Título bem grande */
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.txt-servico p {
+    font-size: 1.1rem;
+    color: #2c3e50; /* Texto escuro para contraste no fundo lilás */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Botão Agendar (Estilo Verde da Referência) */
+.btn-agendar {
+    display: inline-block;
+    background-color: #27ae60; /* Verde forte estilo WhatsApp */
+    color: white;
+    padding: 18px 50px; /* Botão grande */
+    border-radius: 50px; /* Formato pílula */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 20px; /* Afasta do texto */
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-agendar:hover {
+    background-color: #219150; /* Verde mais escuro no hover */
+    transform: translateY(-3px); /* Sobe um pouquinho */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsividade (Ajustes para Celular/Tablet) */
+@media (max-width: 1024px) {
+    .item-servico {
+        flex-direction: column; /* Coloca imagem em cima, texto embaixo */
+        padding: 30px;
+        gap: 30px;
+        border-radius: 30px;
+    }
+
+    .img-servico {
+        flex: auto;
+        width: 100%;
+    }
+
+    .img-servico img {
+        height: 300px; /* Altura fixa no celular */
+        min-height: auto;
+    }
+    
+    .txt-servico h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .btn-agendar {
+        width: 100%; /* Botão ocupa largura total no celular */
+        text-align: center;
+    }
+}
