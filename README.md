@@ -23,6 +23,6 @@ Este projeto simula a presença digital de um escritório de advocacia, focando 
 - [x] Animações suaves de transição
 
 ## 📂 Como rodar localmente
-1. Clone o repositório:
+1. Clone_repositório:
    ```bash
    git clone [https://github.com/luckasdz7/site-advocacia-daniel.git](https://github.com/luckasdz7/site-advocacia-daniel.git)
