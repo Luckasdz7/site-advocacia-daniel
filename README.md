@@ -2,7 +2,7 @@
 
 > Landing Page responsiva desenvolvida para apresentação institucional de escritório de advocacia.
 
- **[CLIQUE AQUI PARA VER O SITE ONLINE](https://danielrosaadvogado.netlify.app/)**
+ **[CLIQUE AQUI PARA VER O SITE ONLINE]([https://danielrosaadvogado.netlify.app/](http://danielrosaadvogado.com.br/))**
 
 ##  Sobre o Projeto
 Este projeto simula a presença digital de um escritório de advocacia, focando em transmitir credibilidade, seriedade e facilidade de contato. O layout foi pensado para guiar o usuário desde a apresentação do profissional até a conversão (contato).
